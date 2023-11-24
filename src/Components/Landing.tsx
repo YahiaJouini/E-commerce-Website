@@ -19,7 +19,7 @@ export default function Landing() {
             </button>
             </div>
             <div>
-                <img src="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
+                <img className="w-[800px]" src="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
             </div>
         </div>
     )
