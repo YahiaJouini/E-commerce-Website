@@ -5,14 +5,18 @@
 
 body {
     font-family: 'Overpass', sans-serif;
+    color: #3b3f46;
+}
+.active {
+  font-weight: 500;
+  color: black;
 }
 
 @layer components {
     .container {
       @apply w-[80%] mx-auto
     }
-  
     .title {
-      @apply text-[30px] font-bold;
+      @apply text-[25px] ;
     }
   }
