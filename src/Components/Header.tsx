@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { MdFavoriteBorder as Fav } from "react-icons/md";
-import { BsCart3 as Cart } from "react-icons/bs";
+import { FaShoppingBag as Bag } from "react-icons/fa";
 
 export default function Header() {
   return (
@@ -26,7 +26,7 @@ export default function Header() {
 
           <div className="flex justify-center gap-4">
             <button><Fav size="1.2rem" /></button>
-            <button><Cart size="1.2rem" /></button>
+            <button><Bag size="1.2rem" /></button>
           </div>
 
           <div className="flex justify-center items-center gap-2">

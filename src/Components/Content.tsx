@@ -31,10 +31,11 @@ export default function Content() {
         <div>
             <DisplayNav loading={loading} HandleClick={HandleClick} />
             {loading && (<div className="h-[50vh]">
-                <BarLoader color="#3b3f46" height={6} width={200} />
-            </div>)}
+                            <h1 className="text-[22px] mb-2">Loading ...</h1>
+                            <BarLoader color="#3b3f46" height={6} width={150} />
+                        </div>)}
             <div className="flex gap-10 justify-between flex-wrap">
-                {content && (content.map((el, idx) => <ProductDisplay key={idx} info={el} />))}
+                {!loading && (content?.map((el, idx) => <ProductDisplay key={idx} info={el} />))}
             </div>
         </div>
     )
