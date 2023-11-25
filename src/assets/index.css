@@ -4,20 +4,27 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Overpass', sans-serif;
-    color: #3b3f46;
-    box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+  color: #3b3f46;
+  box-sizing: border-box;
 }
+
 .active {
   font-weight: 500;
   color: black;
 }
 
+.active-btn {
+  font-weight: 600;
+  color: black;
+}
+
 @layer components {
-    .container {
-      @apply w-[80%] mx-auto
-    }
-    .title {
-      @apply text-[25px] ;
-    }
+  .container {
+    @apply w-[80%] mx-auto
   }
+
+  .title {
+    @apply text-[25px];
+  }
+}
