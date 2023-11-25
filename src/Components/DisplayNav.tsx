@@ -1,13 +1,15 @@
-import { NavLink } from "react-router-dom"
-export default function AllDisplay() {
+type AllDisplayType ={
+    HandleClick:(type:string)=>void
+}
+export default function AllDisplay({HandleClick}:AllDisplayType) {
     return (
         <div className="mb-20">
             <nav className="flex gap-10 mt-20">
-                <NavLink to='/' className="text-[18px]">ALL</NavLink>
-                <NavLink to='/tech' className="text-[18px]" >TECHNOLOGIES</NavLink>
-                <NavLink to='/clothing' className="text-[18px]">CLOTHING</NavLink>
-                <NavLink to='/jewelry' className="text-[18px]">JEWLERY</NavLink>
-                <NavLink to='/furniture' className="text-[18px]">FURNITURE</NavLink>
+                <button className="text-[18px]" onClick={()=>HandleClick("")}>ALL</button>
+                <button className="text-[18px]" onClick={()=>HandleClick("tech")} >TECHNOLOGIES</button>
+                <button className="text-[18px]" onClick={()=>HandleClick("clothing")}>CLOTHING</button>
+                <button className="text-[18px]" onClick={()=>HandleClick("jewelry")}>JEWELRY</button>
+                <button className="text-[18px]" onClick={()=>HandleClick("furniture")}>FURNITURE</button>
             </nav>
         </div>
     )
