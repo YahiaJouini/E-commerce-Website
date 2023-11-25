@@ -146,7 +146,7 @@ export const AllProducts: AllProductsType = [
   {
     id: 15,
     name: "Garmin Fenix 6X Pro Solar Smartwatch",
-    image: "https://example.com/garminfenix6x.jpg",
+    image: "https://www.garmin.com.sg/m/sg/g/products/fenix-6x-ti-image-01.png",
     description: "Multisport GPS smartwatch with solar charging capabilities.",
     price: 1899.99,
     category: "tech",

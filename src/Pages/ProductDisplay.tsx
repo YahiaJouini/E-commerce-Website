@@ -9,8 +9,15 @@ type ProductDisplayType ={
     }
 }
 export default function ProductDisplay({ info }:ProductDisplayType) {
+    const  styles={
+        backgroundImage:`URL(${info.image})`,
+        backgroundPosition:"center",
+        backgroundRepeat:"no-repeat",
+        backgroundSize:"cover"
+    }
     return (
-        <div className="w-[260px] h-[380px] bg-slate-500">
+        <div className="w-[260px] h-[380px] ">
+            <img src={info.image} className="w-fit" />
             
         </div>
     )
