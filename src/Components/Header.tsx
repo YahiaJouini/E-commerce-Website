@@ -8,8 +8,7 @@ import { useContext } from "react";
 export default function Header() {
 
 
-  const { items } = useContext(ItemsContext)
-
+  const provided  = useContext(ItemsContext)
   return (
     <header className="bg-main flex items-center h-[70px] sticky top-0  z-[999]">
       <div className="container flex justify-between items-center ">
@@ -33,7 +32,7 @@ export default function Header() {
 
           <div className="flex justify-center gap-4">
             <button><Fav size="1.2rem" /></button>
-            <button className="flex gap-1"><Bag size="1.2rem" /><span>{items?.length}</span></button>
+            <button className="flex gap-1"><Bag size="1.2rem" /><span>{provided?.items.length}</span></button>
           </div>
 
           <div className="flex justify-center items-center gap-2">

@@ -25,7 +25,7 @@ export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
         setItems(prev => [...prev, item])
     }
 
-    const [items, setItems] = useState<AllProductsType | []>([])
+    const [items, setItems] = useState<AllProductsType>([])
 
     return (
         <ItemsContext.Provider value={{ items, HandleItem }}>
