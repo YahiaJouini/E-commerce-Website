@@ -8,7 +8,7 @@ import { useContext } from "react";
 export default function Header() {
 
 
-  const provided  = useContext(ItemsContext)
+  const provided = useContext(ItemsContext)
   return (
     <header className="bg-main flex items-center h-[70px] sticky top-0  z-[999]">
       <div className="container flex justify-between items-center ">

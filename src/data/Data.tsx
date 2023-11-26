@@ -5,6 +5,7 @@ export type AllProductsType = {
   description: string;
   price: number;
   category: string;
+  added:boolean
 }[];
 
 export const AllProducts: AllProductsType = [
@@ -17,6 +18,7 @@ export const AllProducts: AllProductsType = [
       "The latest flagship smartphone from Apple with Pro-level features.",
     price: 2999.99,
     category: "tech",
+    added:false
   },
   {
     id: 2,
@@ -27,6 +29,7 @@ export const AllProducts: AllProductsType = [
       "A foldable smartphone with a large display, perfect for multitasking.",
     price: 2799.99,
     category: "tech",
+    added:false
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ export const AllProducts: AllProductsType = [
       "Ultra-thin and powerful laptop with a stunning InfinityEdge display.",
     price: 3499.99,
     category: "tech",
+    added:false
   },
   {
     id: 4,
@@ -46,6 +50,7 @@ export const AllProducts: AllProductsType = [
       "Noise-canceling headphones with industry-leading audio quality.",
     price: 899.99,
     category: "tech",
+    added:false
   },
   {
     id: 5,
@@ -56,6 +61,7 @@ export const AllProducts: AllProductsType = [
       "A high-end OLED TV with incredible picture quality and smart features.",
     price: 5499.99,
     category: "tech",
+    added:false
   },
   {
     id: 6,
@@ -66,6 +72,7 @@ export const AllProducts: AllProductsType = [
       "An advanced wireless mouse with customizable buttons and ergonomic design.",
     price: 199.99,
     category: "tech",
+    added:false
   },
   {
     id: 7,
@@ -74,6 +81,7 @@ export const AllProducts: AllProductsType = [
     description: "A powerful graphics card for gaming and content creation.",
     price: 3499.99,
     category: "tech",
+    added:false
   },
   {
     id: 8,
@@ -84,6 +92,7 @@ export const AllProducts: AllProductsType = [
       "The latest action camera with advanced stabilization and 5K video recording.",
     price: 1299.99,
     category: "tech",
+    added:false
   },
   {
     id: 9,
@@ -94,6 +103,7 @@ export const AllProducts: AllProductsType = [
       "True wireless earbuds with excellent noise cancellation and crystal-clear sound.",
     price: 599.99,
     category: "tech",
+    added:false
   },
   {
     id: 10,
@@ -104,6 +114,7 @@ export const AllProducts: AllProductsType = [
       "Versatile 2-in-1 laptop with a detachable keyboard and touch screen.",
     price: 2799.99,
     category: "tech",
+    added:false
   },
   {
     id: 11,
@@ -113,6 +124,7 @@ export const AllProducts: AllProductsType = [
       "High-performance gaming laptop with a fast refresh rate and RGB keyboard.",
     price: 4999.99,
     category: "tech",
+    added:false
   },
   {
     id: 12,
@@ -123,6 +135,7 @@ export const AllProducts: AllProductsType = [
       "Premium true wireless earbuds with active noise cancellation.",
     price: 999.99,
     category: "tech",
+    added:false
   },
   {
     id: 13,
@@ -133,6 +146,7 @@ export const AllProducts: AllProductsType = [
       "Curved gaming monitor with a super ultrawide display for immersive gaming.",
     price: 3899.99,
     category: "tech",
+    added:false
   },
   {
     id: 14,
@@ -142,6 +156,7 @@ export const AllProducts: AllProductsType = [
     description: "Mechanical gaming keyboard with customizable RGB lighting.",
     price: 499.99,
     category: "tech",
+    added:false
   },
   {
     id: 15,
@@ -150,6 +165,7 @@ export const AllProducts: AllProductsType = [
     description: "Multisport GPS smartwatch with solar charging capabilities.",
     price: 1899.99,
     category: "tech",
+    added:false
   },
   {
     id: 16,
@@ -159,6 +175,7 @@ export const AllProducts: AllProductsType = [
     description: "High-resolution mirrorless camera with 8K video recording.",
     price: 5899.99,
     category: "tech",
+    added:false
   },
   {
     id: 17,
@@ -168,6 +185,7 @@ export const AllProducts: AllProductsType = [
     description: "Premium wireless gaming headset with high-fidelity audio.",
     price: 299.99,
     category: "tech",
+    added:false
   },
   {
     id: 18,
@@ -177,6 +195,7 @@ export const AllProducts: AllProductsType = [
       "Stylish and powerful convertible laptop with a 4K touch screen.",
     price: 3199.99,
     category: "tech",
+    added:false
   },
   {
     id: 19,
@@ -187,6 +206,7 @@ export const AllProducts: AllProductsType = [
       "Upgraded version of the popular gaming console with an OLED display.",
     price: 1099.99,
     category: "tech",
+    added:false
   },
   {
     id: 20,
@@ -197,6 +217,7 @@ export const AllProducts: AllProductsType = [
       "Flagship smartphone with Hasselblad camera system and fast charging.",
     price: 2399.99,
     category: "tech",
+    added:false
   },
   {
     id: 21,
@@ -207,6 +228,7 @@ export const AllProducts: AllProductsType = [
       "A timeless classic white shirt for men, perfect for formal occasions.",
     price: 79.99,
     category: "clothing",
+    added:false
   },
   {
     id: 22,
@@ -217,6 +239,7 @@ export const AllProducts: AllProductsType = [
       "Stylish denim jacket for women, great for casual and trendy looks.",
     price: 129.99,
     category: "clothing",
+    added:false
   },
   {
     id: 23,
@@ -226,6 +249,7 @@ export const AllProducts: AllProductsType = [
       "Comfortable and warm hooded sweatshirt suitable for both men and women.",
     price: 59.99,
     category: "clothing",
+    added:false
   },
   {
     id: 24,
@@ -235,6 +259,7 @@ export const AllProducts: AllProductsType = [
     description: "Slim fit chinos for men, perfect for a smart-casual look.",
     price: 89.99,
     category: "clothing",
+    added:false
   },
   {
     id: 25,
@@ -245,6 +270,7 @@ export const AllProducts: AllProductsType = [
       "Elegant floral print dress for women, suitable for various occasions.",
     price: 159.99,
     category: "clothing",
+    added:false
   },
   {
     id: 26,
@@ -255,6 +281,7 @@ export const AllProducts: AllProductsType = [
       "Comfortable and durable running shoes for men, ideal for workouts.",
     price: 129.99,
     category: "clothing",
+    added:false
   },
   {
     id: 27,
@@ -265,6 +292,7 @@ export const AllProducts: AllProductsType = [
       "High-quality yoga leggings for women, providing flexibility and comfort.",
     price: 49.99,
     category: "clothing",
+    added:false
   },
   {
     id: 28,
@@ -274,6 +302,7 @@ export const AllProducts: AllProductsType = [
       "Casual polo shirt for men, great for a laid-back and stylish look.",
     price: 39.99,
     category: "clothing",
+    added:false
   },
   {
     id: 29,
@@ -284,6 +313,7 @@ export const AllProducts: AllProductsType = [
       "Stylish leather ankle boots for women, perfect for fall and winter.",
     price: 179.99,
     category: "clothing",
+    added:false
   },
   {
     id: 30,
@@ -293,6 +323,7 @@ export const AllProducts: AllProductsType = [
       "Classic baseball cap suitable for both men and women, with adjustable strap.",
     price: 24.99,
     category: "clothing",
+    added:false
   },
   {
     id: 31,
@@ -302,6 +333,7 @@ export const AllProducts: AllProductsType = [
     description: "Elegant formal suit for men, perfect for special occasions.",
     price: 299.99,
     category: "clothing",
+    added:false
   },
   {
     id: 32,
@@ -311,6 +343,7 @@ export const AllProducts: AllProductsType = [
     description: "Warm wool coat for women, ideal for chilly winter days.",
     price: 219.99,
     category: "clothing",
+    added:false
   },
   {
     id: 33,
@@ -321,6 +354,7 @@ export const AllProducts: AllProductsType = [
       "Cool graphic T-shirt for men, adding a trendy touch to casual outfits.",
     price: 29.99,
     category: "clothing",
+    added:false
   },
   {
     id: 34,
@@ -330,6 +364,7 @@ export const AllProducts: AllProductsType = [
       "Fashionable high-waisted jeans for women, creating a flattering silhouette.",
     price: 69.99,
     category: "clothing",
+    added:false
   },
   {
     id: 35,
@@ -340,6 +375,7 @@ export const AllProducts: AllProductsType = [
       "Durable and waterproof outdoor jacket for men, suitable for various activities.",
     price: 149.99,
     category: "clothing",
+    added:false
   },
   {
     id: 36,
@@ -349,6 +385,7 @@ export const AllProducts: AllProductsType = [
       "Breathable and moisture-wicking tank top for women, perfect for workouts.",
     price: 34.99,
     category: "clothing",
+    added:false
   },
   {
     id: 37,
@@ -359,6 +396,7 @@ export const AllProducts: AllProductsType = [
       "Classic leather belt for men, adding a stylish finishing touch to outfits.",
     price: 19.99,
     category: "clothing",
+    added:false
   },
   {
     id: 38,
@@ -368,6 +406,7 @@ export const AllProducts: AllProductsType = [
       "Chic summer hat for women, providing shade with a touch of elegance.",
     price: 29.99,
     category: "clothing",
+    added:false
   },
   {
     id: 39,
@@ -378,6 +417,7 @@ export const AllProducts: AllProductsType = [
       "Comfortable and breathable sporty shorts for men, perfect for active lifestyles.",
     price: 24.99,
     category: "clothing",
+    added:false
   },
   {
     id: 40,
@@ -388,6 +428,7 @@ export const AllProducts: AllProductsType = [
       "Stylish crossbody bag for women, perfect for carrying essentials with flair.",
     price: 49.99,
     category: "clothing",
+    added:false
   },
   {
     id: 41,
@@ -398,6 +439,7 @@ export const AllProducts: AllProductsType = [
       "Contemporary leather sofa with sleek design, perfect for modern living spaces.",
     price: 1899.99,
     category: "furniture",
+    added:false
   },
   {
     id: 42,
@@ -408,6 +450,7 @@ export const AllProducts: AllProductsType = [
       "Solid wood dining table set with matching chairs, ideal for family gatherings.",
     price: 1299.99,
     category: "furniture",
+    added:false
   },
   {
     id: 43,
@@ -418,6 +461,7 @@ export const AllProducts: AllProductsType = [
       "Sturdy queen-size bed frame with elegant design, providing comfort and style.",
     price: 899.99,
     category: "furniture",
+    added:false
   },
   {
     id: 44,
@@ -428,6 +472,7 @@ export const AllProducts: AllProductsType = [
       "Sleek glass coffee table with metal accents, adding a touch of sophistication.",
     price: 299.99,
     category: "furniture",
+    added:false
   },
   {
     id: 45,
@@ -438,6 +483,7 @@ export const AllProducts: AllProductsType = [
       "Comfortable leather recliner chair with adjustable positions for relaxation.",
     price: 799.99,
     category: "furniture",
+    added:false
   },
   {
     id: 46,
@@ -448,6 +494,7 @@ export const AllProducts: AllProductsType = [
       "Functional bookcase with integrated storage drawers, perfect for organization.",
     price: 499.99,
     category: "furniture",
+    added:false
   },
   {
     id: 47,
@@ -457,6 +504,7 @@ export const AllProducts: AllProductsType = [
       "Spacious L-shaped office desk for efficient workspace organization.",
     price: 699.99,
     category: "furniture",
+    added:false
   },
   {
     id: 48,
@@ -467,6 +515,7 @@ export const AllProducts: AllProductsType = [
       "Large wardrobe with mirrored doors, providing ample storage and style.",
     price: 1199.99,
     category: "furniture",
+    added:false
   },
   {
     id: 49,
@@ -476,6 +525,7 @@ export const AllProducts: AllProductsType = [
       "Elegant round dining room table, perfect for intimate meals and gatherings.",
     price: 699.99,
     category: "furniture",
+    added:false
   },
   {
     id: 50,
@@ -485,6 +535,7 @@ export const AllProducts: AllProductsType = [
       "Versatile sofa bed with a convertible design, ideal for guest rooms.",
     price: 1299.99,
     category: "furniture",
+    added:false
   },
   {
     id: 51,
@@ -495,6 +546,7 @@ export const AllProducts: AllProductsType = [
       "Charming rustic chest of drawers with wooden accents, adding warmth to any room.",
     price: 899.99,
     category: "furniture",
+    added:false
   },
   {
     id: 52,
@@ -504,6 +556,7 @@ export const AllProducts: AllProductsType = [
       "Modern glass display cabinet with LED lighting, showcasing your collectibles.",
     price: 799.99,
     category: "furniture",
+    added:false
   },
   {
     id: 53,
@@ -513,6 +566,7 @@ export const AllProducts: AllProductsType = [
       "Durable outdoor patio furniture set with comfortable seating for relaxation.",
     price: 1499.99,
     category: "furniture",
+    added:false
   },
   {
     id: 54,
@@ -523,6 +577,7 @@ export const AllProducts: AllProductsType = [
       "Stylish upholstered accent chair, adding flair to any living space.",
     price: 349.99,
     category: "furniture",
+    added:false
   },
   {
     id: 55,
@@ -533,6 +588,7 @@ export const AllProducts: AllProductsType = [
       "Functional dresser with a matching mirror, providing ample storage for clothes.",
     price: 699.99,
     category: "furniture",
+    added:false
   },
   {
     id: 56,
@@ -543,6 +599,7 @@ export const AllProducts: AllProductsType = [
       "Comfortable bar stools with backrest, perfect for kitchen or bar area.",
     price: 89.99,
     category: "furniture",
+    added:false
   },
   {
     id: 57,
@@ -552,6 +609,7 @@ export const AllProducts: AllProductsType = [
       "Space-saving corner TV stand with storage shelves for media equipment.",
     price: 249.99,
     category: "furniture",
+    added:false
   },
   {
     id: 58,
@@ -562,6 +620,7 @@ export const AllProducts: AllProductsType = [
       "Compact bedside table with a drawer, perfect for keeping essentials within reach.",
     price: 79.99,
     category: "furniture",
+    added:false
   },
   {
     id: 59,
@@ -572,6 +631,7 @@ export const AllProducts: AllProductsType = [
       "Versatile leather ottoman, serving as a stylish accent piece or extra seating.",
     price: 129.99,
     category: "furniture",
+    added:false
   },
   {
     id: 60,
@@ -582,6 +642,7 @@ export const AllProducts: AllProductsType = [
       "Modern adjustable bar table, perfect for entertaining guests in style.",
     price: 179.99,
     category: "furniture",
+    added:false
   },
   {
     id: 61,
@@ -592,6 +653,7 @@ export const AllProducts: AllProductsType = [
       "Elegant diamond solitaire necklace, perfect for special occasions.",
     price: 2999.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 62,
@@ -602,6 +664,7 @@ export const AllProducts: AllProductsType = [
       "Classic gold hoop earrings, adding a touch of sophistication to any look.",
     price: 699.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 63,
@@ -612,6 +675,7 @@ export const AllProducts: AllProductsType = [
       "Exquisite sapphire and diamond ring, a stunning addition to your jewelry collection.",
     price: 1899.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 64,
@@ -622,6 +686,7 @@ export const AllProducts: AllProductsType = [
       "Timeless pearl bracelet, perfect for both casual and formal occasions.",
     price: 499.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 65,
@@ -632,6 +697,7 @@ export const AllProducts: AllProductsType = [
       "Graceful emerald stud earrings, adding a pop of color to your ensemble.",
     price: 899.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 66,
@@ -642,6 +708,7 @@ export const AllProducts: AllProductsType = [
       "Chic silver charm bracelet, customizable with various charms and pendants.",
     price: 129.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 67,
@@ -652,6 +719,7 @@ export const AllProducts: AllProductsType = [
       "Striking ruby pendant necklace, a symbol of passion and love.",
     price: 1599.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 68,
@@ -662,6 +730,7 @@ export const AllProducts: AllProductsType = [
       "Classic diamond tennis bracelet, adding sparkle to any wrist.",
     price: 3499.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 69,
@@ -672,6 +741,7 @@ export const AllProducts: AllProductsType = [
       "Elegant rose gold wedding band, a symbol of everlasting love.",
     price: 899.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 70,
@@ -682,6 +752,7 @@ export const AllProducts: AllProductsType = [
       "Radiant citrine drop earrings, perfect for adding a touch of sunshine to your look.",
     price: 499.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 71,
@@ -692,6 +763,7 @@ export const AllProducts: AllProductsType = [
       "Exquisite diamond halo engagement ring, a symbol of commitment and love.",
     price: 3999.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 72,
@@ -701,6 +773,7 @@ export const AllProducts: AllProductsType = [
       "Chic white gold anklet, perfect for adding a subtle touch of glamour to your ankle.",
     price: 149.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 73,
@@ -711,6 +784,7 @@ export const AllProducts: AllProductsType = [
       "Bold amethyst cocktail ring, making a statement with its vibrant purple hue.",
     price: 899.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 74,
@@ -721,6 +795,7 @@ export const AllProducts: AllProductsType = [
       "Bohemian-style turquoise beaded necklace, adding a pop of color to your outfit.",
     price: 129.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 75,
@@ -731,6 +806,7 @@ export const AllProducts: AllProductsType = [
       "Timeless platinum cross pendant, a symbol of faith and elegance.",
     price: 999.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 76,
@@ -741,6 +817,7 @@ export const AllProducts: AllProductsType = [
       "Sparkling diamond cluster stud earrings, perfect for adding brilliance to your ears.",
     price: 1499.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 77,
@@ -751,6 +828,7 @@ export const AllProducts: AllProductsType = [
       "Trendy gold bangle bracelet set, ideal for stacking and creating a stylish look.",
     price: 249.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 78,
@@ -761,6 +839,7 @@ export const AllProducts: AllProductsType = [
       "Mesmerizing opal pendant necklace, capturing the beauty of iridescent colors.",
     price: 799.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 79,
@@ -771,6 +850,7 @@ export const AllProducts: AllProductsType = [
       "Stylish sterling silver cuff bracelet, a versatile addition to your jewelry collection.",
     price: 89.99,
     category: "jewelry",
+    added:false
   },
   {
     id: 80,
@@ -781,5 +861,6 @@ export const AllProducts: AllProductsType = [
       "Timeless diamond infinity pendant, symbolizing eternal love and connection.",
     price: 1599.99,
     category: "jewelry",
+    added:false
   },
 ];
