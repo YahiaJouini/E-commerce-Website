@@ -1,20 +1,21 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
-import { useState } from "react";
-import {AllProductsType } from "./data/Data";
+import {ItemsProvider} from "./Contexts/ItemsContext";
+
 function App() {
-  const [cartItems,setCartItems] =useState<AllProductsType> ([])
-  function HandleCart() {
-    
-  }
+
   return (
     <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home HandleCart={HandleCart} />} />
-      </Routes>
+      <ItemsProvider>
+        
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </ItemsProvider> 
     </div>
+
   );
 }
 export default App;

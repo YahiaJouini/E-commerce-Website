@@ -1,7 +1,7 @@
 import DisplayNav from "./DisplayNav"
 import { AllProducts, AllProductsType } from "../data/Data"
 import { useState, useEffect } from "react"
-import ProductDisplay from "../Pages/ProductDisplay"
+import ProductDisplay from "./ProductDisplay"
 import BarLoader from "react-spinners/BarLoader"
 export default function Content() {
     const [content, setContent] = useState<AllProductsType | null>(null)

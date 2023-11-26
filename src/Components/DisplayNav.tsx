@@ -19,7 +19,7 @@ export default function AllDisplay({ HandleClick, loading }: AllDisplayType) {
     }
 
     return (
-        <div className="mb-20">
+        <div className="mb-14">
             <nav className="flex gap-10 mt-20">
                 <button disabled={loading} className="text-[18px] active-btn" onClick={(e) => ManageButton(e, "")}>ALL</button>
                 <button disabled={loading} className="text-[18px]" onClick={(e) => ManageButton(e, "tech")} >TECHNOLOGIES</button>
