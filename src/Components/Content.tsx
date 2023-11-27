@@ -1,9 +1,8 @@
 import DisplayNav from "./DisplayNav"
 import { AllProducts, AllProductsType } from "../data/Data"
 import { useState, useEffect } from "react"
-import ProductDisplay from "./ProductDisplay"
+import Allrproducts from "./Allrproducts"
 import BarLoader from "react-spinners/BarLoader"
-import { itemType } from "../Contexts/ItemsContext"
 
 export default function Content() {
 
@@ -31,19 +30,6 @@ export default function Content() {
             setLoading(false)
         }, 1500)
     }
-
-    const HandleAdd = (item: itemType) => {
-        setContent((prev) =>
-            prev ? (
-                prev.map((con) => {
-                    if (con === item) {
-                        return { ...con, added: !con.added };
-                    }
-                    return con;
-                })
-            ) : []
-        )
-    }
     return (
         <div>
             <DisplayNav loading={loading} HandleClick={HandleClick} />
@@ -52,7 +38,7 @@ export default function Content() {
                 <BarLoader color="#3b3f46" height={6} width={150} />
             </div>)}
             <div className="flex gap-10 justify-between flex-wrap">
-                {!loading && (content?.map((el, idx) => <ProductDisplay key={idx} info={el} HandleAdd={HandleAdd} />))}
+                {!loading && (content?.map((el, idx) => <Allrproducts key={idx} info={el}/>))}
             </div>
         </div>
     )

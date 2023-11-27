@@ -9,41 +9,47 @@ export type itemType = {
     description: string;
     price: number;
     category: string;
-    added: boolean
 }
 
 type ItemsContextType = {
     items: itemType[] | []
-    HandleItem: (item: itemType) => void
+    HandleAdd: (item: itemType) => void
+    HandleRemove: (item: itemType) => void
 }
 
 export const ItemsContext = createContext<ItemsContextType | null>(null)
 
-export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
-
-    function exists(array: itemType[], element: itemType) {
+// to count items and check for existance (return value > 0)
+export function Count(array: itemType[] | [] | undefined, element: itemType) {
+    let result = 0
+    if (array) {
         for (let arr of array) {
             if (arr.id === element.id) {
-                return true
+                result += 1
             }
         }
-        return false
     }
+    return result
+}
 
-    const HandleItem = (item: itemType) => {
-        if (exists(items, item)) {
-            setItems(prev => prev.filter(pr => pr.id !== item.id))
-        }
-        else {
-            setItems(prev => [...prev, item])
-        }
-
-    }
+export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
 
     const [items, setItems] = useState<itemType[]>([])
 
+    // adding a new item to the cart
+    const HandleAdd = (item: itemType) => {
+        setItems(prev => [...prev, item])
+    }
+
+    // removing an item from the cart!
+    const HandleRemove = (item:itemType) => {
+        const firstHalf = items.slice(0, items.indexOf(item))
+        const secondHalf = items.slice(items.indexOf(item) + 1)
+        setItems([...firstHalf, ...secondHalf])
+    }
+
     return (
-        <ItemsContext.Provider value={{ items, HandleItem }}>
+        <ItemsContext.Provider value={{ items, HandleAdd, HandleRemove }}>
             {children}
         </ItemsContext.Provider>
     )

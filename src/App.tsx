@@ -10,7 +10,6 @@ function App() {
       <ItemsProvider>
 
         <Header />
-        
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

@@ -10,6 +10,7 @@ export default function Header() {
 
   const provided = useContext(ItemsContext)
   return (
+
     <header className="bg-main flex items-center h-[70px] sticky top-0  z-[999]">
       <div className="container flex justify-between items-center ">
 
@@ -24,15 +25,18 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search for products ..."
-            className="w-[300px] h-[30px] rounded-md px-3 shadow-sm outline-none text-sm"
-          />
-
+            className="w-[300px] h-[30px] rounded-md px-3 shadow-sm outline-none text-sm"/>
+            
         </nav>
+
         <div className="flex justify-center items-center gap-10">
 
           <div className="flex justify-center gap-4">
             <button><Fav size="1.2rem" /></button>
-            <button className="flex gap-1"><Bag size="1.2rem" /><span>{provided?.items.length}</span></button>
+            <button className="flex gap-1">
+              <Bag size="1.2rem" />
+              <span className="w-4 font-medium">{provided?.items.length}</span>
+            </button>
           </div>
 
           <div className="flex justify-center items-center gap-2">
@@ -42,6 +46,7 @@ export default function Header() {
           </div>
 
         </div>
+
       </div>
     </header>
   );
