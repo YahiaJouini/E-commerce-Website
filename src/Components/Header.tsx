@@ -25,8 +25,8 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search for products ..."
-            className="w-[300px] h-[30px] rounded-md px-3 shadow-sm outline-none text-sm"/>
-            
+            className="w-[300px] h-[30px] rounded-md px-3 shadow-sm outline-none text-sm" />
+
         </nav>
 
         <div className="flex justify-center items-center gap-10">

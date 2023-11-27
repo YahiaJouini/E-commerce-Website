@@ -14,11 +14,11 @@ import { itemType } from "../Contexts/ItemsContext";
 
 // setting up the Types
 type ProductDisplayType = {
-    info:itemType
+    info: itemType
 }
 
 
-export default function ProductDisplay({ info}: ProductDisplayType) {
+export default function ProductDisplay({ info }: ProductDisplayType) {
 
     //setting the product image
     const styles = {
@@ -43,7 +43,7 @@ export default function ProductDisplay({ info}: ProductDisplayType) {
             <div>
 
                 <h1 className="text-lg text-center break-keep mb-4">{info.name}</h1>
-                {!Count(provided?.items,info) ? (
+                {!Count(provided?.items, info) ? (
                     <div className="w-[260px] flex justify-around items-center">
                         <h1 className="text-[17px] font-bold">{info.price} TND</h1>
                         <button className={buttonStyles} onClick={HandleClick}><Cart size="1.3rem" /></button>
@@ -53,7 +53,7 @@ export default function ProductDisplay({ info}: ProductDisplayType) {
                         <h1 className="text-[17px] font-bold">{info.price} TND</h1>
                         <div className="w-full flex justify-center gap-8 items-center mt-2">
 
-                            <button className={`${buttonStyles} p-0 w-8 h-8`}  onClick={()=>provided?.HandleAdd(info)}>
+                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => provided?.HandleAdd(info)}>
 
                                 <Plus size="1.1rem" />
 
@@ -61,7 +61,7 @@ export default function ProductDisplay({ info}: ProductDisplayType) {
 
                             <h1 className="text-[25px]">{Count(provided?.items, info)}</h1>
 
-                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={()=>provided?.HandleRemove(info)}>
+                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => provided?.HandleRemove(info)}>
 
                                 <Minus size="0.9rem" />
 

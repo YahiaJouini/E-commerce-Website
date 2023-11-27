@@ -11,23 +11,26 @@ export default function Content() {
 
     useEffect(() => {
         setTimeout(() => {
-            setContent(AllProducts.sort(() => Math.random() - 0.5))
+            setContent(AllProducts.filter(product => product.category === "tech")) //initializing the array to tech onload
             setLoading(false)
         }, 1500)
     }, [])
 
     function HandleClick(type: string) {
+
         setLoading(true)
+
         // Used setTimeout for a brief loading delay during data fetching to mimic real word work environment.
         setTimeout(() => {
 
             if (!type) {
-                setContent(AllProducts.sort(() => Math.random() - 0.5))
+                setContent(AllProducts.slice().sort(() => Math.random() - 0.5)) //.slice() so the original array does not change !
             }
             else {
                 setContent(AllProducts.filter(product => product.category === type))
             }
             setLoading(false)
+
         }, 1500)
     }
     return (
@@ -38,7 +41,7 @@ export default function Content() {
                 <BarLoader color="#3b3f46" height={6} width={150} />
             </div>)}
             <div className="flex gap-10 justify-between flex-wrap">
-                {!loading && (content?.map((el, idx) => <Allrproducts key={idx} info={el}/>))}
+                {!loading && (content?.map((el, idx) => <Allrproducts key={idx} info={el} />))}
             </div>
         </div>
     )

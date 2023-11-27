@@ -42,7 +42,7 @@ export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     // removing an item from the cart!
-    const HandleRemove = (item:itemType) => {
+    const HandleRemove = (item: itemType) => {
         const firstHalf = items.slice(0, items.indexOf(item))
         const secondHalf = items.slice(items.indexOf(item) + 1)
         setItems([...firstHalf, ...secondHalf])

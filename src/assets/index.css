@@ -14,11 +14,6 @@ body {
   color: black;
 }
 
-.active-btn {
-  font-weight: 600;
-  color: black;
-}
-
 @layer components {
   .container {
     @apply w-[80%] mx-auto
