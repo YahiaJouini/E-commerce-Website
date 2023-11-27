@@ -37,7 +37,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
     const buttonStyles = "bg-[#f5f5f5] hover:bg-[#e6e6e6] p-[9px] rounded-lg flex justify-center items-center"
 
     return (
-        <div className="w-[300px] bg-white flex flex-col items-center justify-between pb-2 px-4 shadow-lg hover:scale-[1.04] cursor-pointer transition-all ease-in-out rounded-lg">
+        <div className="w-[300px] bg-white flex flex-col items-center justify-between pb-2 px-4 product-shadow hover:scale-[1.04] cursor-pointer transition-all ease-in-out rounded-lg">
             <div style={styles} className="w-[260px] h-[320px] mb-3" ></div>
 
             <div>

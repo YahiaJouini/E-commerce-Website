@@ -6,7 +6,7 @@ export default function Landing() {
     return (
         <div className="bg-gradient-to-r from-[#c7ebfa] to-[#e7eff9] p-[180px] py-[80px] flex items-center ">
             <div>
-            <h1 className="text-[30px] font-extrabold text-s ">WELCOME TO VARIETYFINDS<br />
+            <h1 className="text-[30px] font-extrabold text-s  tracking-wide ">WELCOME TO VARIETYFINDS<br />
                 UNLEASH YOUR SHOPPING ADVENTURE!</h1>
             <p className="text-[18px] w-[95%] mt-5">
                 Dive into a world of endless possibilities with VarietyFinds!
@@ -14,7 +14,7 @@ export default function Landing() {
             </p>
             <button
                 onClick={() => { navigate("/register") }}
-                className="text-[20px] mt-10 font-extrabold flex items-center gap-1">
+                className="text-[20px] mt-10 font-extrabold flex items-center gap-1 ">
                 REGISTER NOW <Left />
             </button>
             </div>

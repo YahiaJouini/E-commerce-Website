@@ -22,4 +22,20 @@ body {
   .title {
     @apply text-[25px];
   }
+  .btn {
+    @apply text-[17px] font-medium  text-white
+           w-[200px] h-[50px] my-20 rounded-md bg-[#2f3134]
+           disabled:bg-[#575758] 
+           hover:scale-[1.04] disabled:scale-100 transition-all 
+  }
+}
+
+.search-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.product-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.button-shadow {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
