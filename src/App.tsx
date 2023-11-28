@@ -6,7 +6,6 @@ import { ItemsProvider } from "./Contexts/ItemsContext";
 function App() {
 
   return (
-    <div>
       <ItemsProvider>
 
         <Header />
@@ -15,7 +14,6 @@ function App() {
         </Routes>
 
       </ItemsProvider>
-    </div>
 
   );
 }

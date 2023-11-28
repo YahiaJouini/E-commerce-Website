@@ -9,7 +9,7 @@ export default function Content() {
     const [content, setContent] = useState<AllProductsType | null>(null)
     const [loading, setLoading] = useState(true)
 
-    const ref = useRef<HTMLButtonElement>(null)
+    const ref = useRef<HTMLDivElement>(null)
 
 
     const [display, setDisplay] = useState(4)
@@ -59,28 +59,31 @@ export default function Content() {
             }
         }
         setTimeout(() => {
-            ref.current?.scrollIntoView({ behavior: 'smooth' });
-        }, 100) // waits untill products load before scrolling
+            
+            ref.current?.scrollIntoView({behavior: "smooth", block:"end"}); // scroll to the button of the parent block
+        
+        }, 100) // waits for products to load before scrolling
     }
 
     return (
         <div>
 
             <DisplayNav loading={loading} HandleClick={HandleClick} />
-            {loading && (<div className="h-[50vh]">
+            {loading && (<div ref={ref} className="h-[50vh]">
                 <h1 className="text-[22px] mb-2">Loading ...</h1>
                 <BarLoader color="#3b3f46" height={6} width={150} />
             </div>)}
 
             {!loading && (
-                <div className="flex flex-col items-center">
-                    <div className="w-full">
-                        <div className=" w-full flex gap-12 justify-between flex-wrap">
+                <div ref={ref} className="flex flex-col items-center">
+
+                        <div ref={ref} className="w-full flex gap-12 justify-between flex-wrap">
                             {content?.slice(0, display)?.map((el, idx) => <Allrproducts key={idx} info={el} />)}
                         </div>
-                    </div>
 
-                    <button ref={ref} disabled={!LessOrEqual} onClick={HandleDisplay} className="btn button-shadow">{ButtonName}</button>
+                    <button disabled={!LessOrEqual} 
+                            onClick={HandleDisplay} 
+                            className="btn button-shadow">{ButtonName}</button>
                 </div>
             )}
         </div>

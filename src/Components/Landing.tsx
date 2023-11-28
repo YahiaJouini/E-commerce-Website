@@ -6,9 +6,9 @@ export default function Landing() {
     return (
         <div className="bg-gradient-to-r from-[#c7ebfa] to-[#e7eff9] p-[180px] py-[80px] flex items-center ">
             <div>
-                <h1 className="text-[30px] font-extrabold text-s  tracking-wide ">WELCOME TO VARIETYFINDS<br />
+                <h1 className="text-[30px] font-extrabold text-s  tracking-wide ">WELCOME TO VARIETY-FINDS<br />
                     UNLEASH YOUR SHOPPING ADVENTURE!</h1>
-                <p className="text-[18px] w-[95%] mt-5">
+                <p className="text-[19px] w-[95%] mt-5">
                     Dive into a world of endless possibilities with VarietyFinds!
                     Discover unique treasures that redefine your shopping experience. From tech marvels to fashion gems, we've got it all.
                 </p>
