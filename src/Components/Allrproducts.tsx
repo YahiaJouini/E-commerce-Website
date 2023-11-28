@@ -2,6 +2,7 @@
 import { BsCart3 as Cart } from "react-icons/bs";
 import { FaPlus as Plus } from "react-icons/fa6";
 import { FaMinus as Minus } from "react-icons/fa";
+import BeatLoader from "react-spinners/BeatLoader"
 
 // importing Context
 import { Count, ItemsContext } from "../Contexts/ItemsContext";
@@ -11,6 +12,8 @@ import { useContext } from "react";
 //importing Types
 import { itemType } from "../Contexts/ItemsContext";
 
+//importing Hooks
+import { useEffect, useState } from "react"
 
 // setting up the Types
 type ProductDisplayType = {
@@ -20,14 +23,22 @@ type ProductDisplayType = {
 
 export default function ProductDisplay({ info }: ProductDisplayType) {
 
+    const [url, setUrl] = useState<string | null>(null)
+
+    useEffect(() => {
+        const img = new Image()
+        img.src = info.image
+        img.onload = () => setUrl(info.image)
+    }, [info.image]) // for loading effect and speed efficiency
+
     //setting the product image
+
     const styles = {
-        backgroundImage: `URL(${info.image})`,
+        backgroundImage: `URL(${url})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain"
     }
-
 
     const provided = useContext(ItemsContext)
 
@@ -38,17 +49,25 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
     return (
         <div className="w-[300px] bg-white flex flex-col items-center justify-between pb-2 px-4 product-shadow hover:scale-[1.04] cursor-pointer transition-all ease-in-out rounded-lg">
-            <div style={styles} className="w-[260px] h-[320px] mb-3" ></div>
+
+            {/* displaying a loader if the image is not loaded yet (url is still null) */}
+
+            {url ?
+                (<div style={styles} className="w-full h-[320px] mb-3" ></div>) :
+                (<div className="w-full flex justify-center items-center h-[320px] bg-gray-100 mb-3" >
+                    <BeatLoader color="#3b3f46" size={20} />
+                </div>)
+
+            }
 
             <div>
-
                 <h1 className="text-lg text-center break-keep mb-4">{info.name}</h1>
-                {!Count(provided?.items, info) ? (
+                {!Count(provided?.items, info) ?
                     <div className="w-[260px] flex justify-around items-center">
                         <h1 className="text-[17px] font-bold">{info.price} TND</h1>
                         <button className={buttonStyles} onClick={HandleClick}><Cart size="1.3rem" /></button>
                     </div>
-                ) :
+                    :
                     <div className="w-[260px] flex flex-col justify-around items-center">
                         <h1 className="text-[17px] font-bold">{info.price} TND</h1>
                         <div className="w-full flex justify-center gap-8 items-center mt-2">
@@ -69,7 +88,6 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
                         </div>
                     </div>
                 }
-
 
             </div>
 

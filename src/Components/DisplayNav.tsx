@@ -20,13 +20,17 @@ export default function AllDisplay({ HandleClick, loading }: AllDisplayType) {
 
     return (
         <div className="mb-14">
+
             <nav className="flex gap-10 mt-20">
+
                 <button disabled={loading} className="text-[18px]" onClick={(e) => ManageButton(e, "")}>ALL</button>
                 <button disabled={loading} className="text-[18px] active" onClick={(e) => ManageButton(e, "tech")} >TECHNOLOGIES</button>
                 <button disabled={loading} className="text-[18px]" onClick={(e) => ManageButton(e, "clothing")}>CLOTHING</button>
                 <button disabled={loading} className="text-[18px]" onClick={(e) => ManageButton(e, "jewelry")}>JEWELRY</button>
                 <button disabled={loading} className="text-[18px]" onClick={(e) => ManageButton(e, "furniture")}>FURNITURE</button>
+
             </nav>
+
         </div>
     )
 }
