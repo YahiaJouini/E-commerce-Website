@@ -1,8 +1,14 @@
+//importing componenets
 import DisplayNav from "./DisplayNav"
+import Allrproducts from "./Allrproducts"
+
+//imporing loaders
+import BarLoader from "react-spinners/BarLoader"
+
 import { AllProducts, AllProductsType } from "../data/Data"
 import { useState, useEffect, useRef } from "react"
-import Allrproducts from "./Allrproducts"
-import BarLoader from "react-spinners/BarLoader"
+
+
 
 export default function Content() {
 
@@ -19,6 +25,7 @@ export default function Content() {
     const LessOrEqual = content ? display + 4 <= content?.length : false
 
     useEffect(() => {
+
         setTimeout(() => {
             setContent(AllProducts.filter(product => product.category === "tech")) //initializing the array to tech onload
             setLoading(false)
@@ -59,9 +66,9 @@ export default function Content() {
             }
         }
         setTimeout(() => {
-            
-            ref.current?.scrollIntoView({behavior: "smooth", block:"end"}); // scroll to the button of the parent block
-        
+
+            ref.current?.scrollIntoView({ behavior: "smooth", block: "end" }); // scroll to the button of the parent block
+
         }, 100) // waits for products to load before scrolling
     }
 
@@ -77,13 +84,13 @@ export default function Content() {
             {!loading && (
                 <div ref={ref} className="flex flex-col items-center">
 
-                        <div ref={ref} className="w-full flex gap-12 justify-between flex-wrap">
-                            {content?.slice(0, display)?.map((el, idx) => <Allrproducts key={idx} info={el} />)}
-                        </div>
+                    <div ref={ref} className="w-full flex gap-12 justify-between flex-wrap">
+                        {content?.slice(0, display)?.map((el, idx) => <Allrproducts key={idx} info={el} />)}
+                    </div>
 
-                    <button disabled={!LessOrEqual} 
-                            onClick={HandleDisplay} 
-                            className="btn button-shadow">{ButtonName}</button>
+                    <button disabled={!LessOrEqual}
+                        onClick={HandleDisplay}
+                        className="btn button-shadow">{ButtonName}</button>
                 </div>
             )}
         </div>

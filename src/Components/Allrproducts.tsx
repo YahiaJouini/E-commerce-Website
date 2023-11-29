@@ -1,4 +1,4 @@
-// importing Icons
+// importing Icons/loaders
 import { BsCart3 as Cart } from "react-icons/bs";
 import { FaPlus as Plus } from "react-icons/fa6";
 import { FaMinus as Minus } from "react-icons/fa";
@@ -12,8 +12,10 @@ import { useContext } from "react";
 //importing Types
 import { itemType } from "../Contexts/ItemsContext";
 
-//importing Hooks
-import { useEffect, useState } from "react"
+// importing our custom hook
+import useLoader from "../CustomHooks/useLoader";
+
+import { useNavigate } from "react-router-dom";
 
 // setting up the Types
 type ProductDisplayType = {
@@ -23,13 +25,8 @@ type ProductDisplayType = {
 
 export default function ProductDisplay({ info }: ProductDisplayType) {
 
-    const [url, setUrl] = useState<string | null>(null)
-
-    useEffect(() => {
-        const img = new Image()
-        img.src = info.image
-        img.onload = () => setUrl(info.image)
-    }, [info.image]) // for loading effect and speed efficiency
+    const url = useLoader(info.image)
+    const navigate = useNavigate()
 
     //setting the product image
 
@@ -45,10 +42,24 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
     const HandleClick = () => {
         provided?.HandleAdd(info)
     }
-    const buttonStyles = "bg-[#f5f5f5] hover:bg-[#e6e6e6] p-[9px] rounded-lg flex justify-center items-center"
+
+    const HandleNavigate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+
+        const check = ["path", "svg", "BUTTON"]// to make sure the button with functions are not links to product page
+
+        if (!check.includes((e.target as Element).tagName)) {
+            navigate(`/product/${info.id}`)
+        }
+
+    }
+    const buttonStyles = "bg-[#f5f5f5] hover:bg-[#e6e6e6] p-[9px] rounded-lg flex justify-center items-center no-event"
 
     return (
-        <div className="w-[300px] bg-white flex flex-col items-center justify-between pb-2 px-4 product-shadow hover:scale-[1.04] cursor-pointer transition-all ease-in-out rounded-lg">
+        <div onClick={(e) =>
+            HandleNavigate(e)}
+            className="w-[300px] bg-white flex flex-col items-center 
+                        justify-between pb-2 px-4 product-shadow hover:scale-[1.04] 
+                        cursor-pointer transition-all ease-in-out rounded-lg">
 
             {/* displaying a loader if the image is not loaded yet (url is still null) */}
 
@@ -62,10 +73,15 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
             <div>
                 <h1 className="text-lg text-center break-keep mb-4">{info.name}</h1>
+
                 {!Count(provided?.items, info) ?
                     <div className="w-[260px] flex justify-around items-center">
+
                         <h1 className="text-[17px] font-bold">{info.price} TND</h1>
-                        <button className={buttonStyles} onClick={HandleClick}><Cart size="1.3rem" /></button>
+
+                        <button className={buttonStyles} onClick={HandleClick}>
+                            <Cart size="1.3rem" className="no-event" />
+                        </button>
                     </div>
                     :
                     <div className="w-[260px] flex flex-col justify-around items-center">
@@ -82,7 +98,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
                             <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => provided?.HandleRemove(info)}>
 
-                                <Minus size="0.9rem" />
+                                <Minus size="0.9rem" value="dd" />
 
                             </button>
                         </div>
