@@ -1,5 +1,6 @@
 // components 
 import ProductButton from "../Components/ProductButton"
+import Quantity from "../Components/Quantity"
 
 // importing the custom hook and functions
 import useLoader from "../CustomHooks/useLoader"
@@ -7,8 +8,6 @@ import { Count } from "../Contexts/ItemsContext"
 import { AllProducts } from "../data/Data"
 
 // importing icons,loader,toast notification
-import { FaPlus as Plus } from "react-icons/fa6";
-import { FaMinus as Minus } from "react-icons/fa";
 import BeatLoader from "react-spinners/BeatLoader"
 import { ToastContainer, toast } from "react-toastify"
 
@@ -84,15 +83,9 @@ export default function Product() {
           <p className="text-[18px] tracking-wide w-[80%] text-center">{product.description}</p>
 
           <div className="w-[80%] ">
-            <h1 className="font-bold m-2">QUANTITY</h1>
 
-            <div className="flex justify-between items-center w-[120px] h-[35px] border-[#2f3134] border-2 p-2">
-              <h1 className="text-[20px] font-bold">{qty}</h1>
-              <div className="flex justify-between items-center  w-[40%]">
-                <button className="hover:scale-110 transition-all" onClick={() => HandleClick(1)}><Plus /></button>
-                <button className="hover:scale-110 transition-all" onClick={() => HandleClick(-1)}><Minus /></button>
-              </div>
-            </div>
+            <h1 className="font-bold m-2">QUANTITY</h1>
+            <Quantity qty={qty} HandleClick={HandleClick} />
 
           </div>
           <ProductButton HandleNavigate={() => navigate("/cart")}>VIEW CART</ProductButton>

@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { ItemsContext } from "../Contexts/ItemsContext";
 import { useContext } from "react";
 
@@ -10,6 +10,8 @@ export default function Header() {
 
 
   const provided = useContext(ItemsContext)
+  const navigate = useNavigate()
+
   return (
 
     <header className="bg-main flex items-center h-[70px] sticky top-0  z-[999]">
@@ -35,7 +37,7 @@ export default function Header() {
 
           <div className="flex justify-center gap-4">
             <button><Fav size="1.2rem" /></button>
-            <button className="flex gap-1">
+            <button className="flex gap-1" onClick={() => navigate("/cart")}>
               <Bag size="1.2rem" />
               <span className="w-4 font-medium">{provided?.items.length}</span>
             </button>
