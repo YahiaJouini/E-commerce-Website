@@ -73,7 +73,7 @@ export default function Product() {
     return (
       <div className="container flex items-center justify-around h-[85vh] ml-40">
         <div className="w-[540px] flex justify-center items-center">
-          {url ? <img className="full" src={url} alt="Image of the product" /> : <BeatLoader />}
+          {url ? <img src={url} alt="Image of the product" /> : <BeatLoader />}
         </div>
         <ToastContainer />
 
@@ -95,7 +95,7 @@ export default function Product() {
             </div>
 
           </div>
-          <ProductButton>VIEW CART</ProductButton>
+          <ProductButton HandleNavigate={() => navigate("/cart")}>VIEW CART</ProductButton>
           <ProductButton HandleNavigate={() => navigate("/")}>KEEP SHOPPING</ProductButton>
         </div>
 

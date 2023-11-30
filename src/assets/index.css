@@ -7,6 +7,7 @@ body {
   font-family: 'Overpass', sans-serif;
   color: #3b3f46;
   box-sizing: border-box;
+  background-color: #fefeff;
 }
 
 .active {
