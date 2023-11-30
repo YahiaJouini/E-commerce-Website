@@ -13,8 +13,8 @@ export type itemType = {
 
 type ItemsContextType = {
     items: itemType[] | []
-    HandleAdd: (item: itemType) => void
-    HandleRemove: (item: itemType) => void
+    HandleAdd: (item: itemType | undefined) => void
+    HandleRemove: (item: itemType | undefined) => void
 }
 
 export const ItemsContext = createContext<ItemsContextType | null>(null)
@@ -37,15 +37,18 @@ export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
     const [items, setItems] = useState<itemType[]>([])
 
     // adding a new item to the cart
-    const HandleAdd = (item: itemType) => {
-        setItems(prev => [...prev, item])
+    const HandleAdd = (item: itemType | undefined) => {
+        (item && setItems(prev => [...prev, item]))
+
     }
 
     // removing an item from the cart!
-    const HandleRemove = (item: itemType) => {
-        const firstHalf = items.slice(0, items.indexOf(item))
-        const secondHalf = items.slice(items.indexOf(item) + 1)
-        setItems([...firstHalf, ...secondHalf])
+    const HandleRemove = (item: itemType | undefined) => {
+        if (item) {
+            const firstHalf = items.slice(0, items.indexOf(item))
+            const secondHalf = items.slice(items.indexOf(item) + 1)
+            setItems([...firstHalf, ...secondHalf])
+        }
     }
 
     return (

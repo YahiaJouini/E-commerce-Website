@@ -4,17 +4,15 @@ import { FaPlus as Plus } from "react-icons/fa6";
 import { FaMinus as Minus } from "react-icons/fa";
 import BeatLoader from "react-spinners/BeatLoader"
 
-// importing Context
-import { Count, ItemsContext } from "../Contexts/ItemsContext";
-import { useContext } from "react";
-
-
 //importing Types
 import { itemType } from "../Contexts/ItemsContext";
 
 // importing our custom hook
 import useLoader from "../CustomHooks/useLoader";
 
+
+import { Count, ItemsContext } from "../Contexts/ItemsContext";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 // setting up the Types
@@ -77,7 +75,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
                 {!Count(provided?.items, info) ?
                     <div className="w-[260px] flex justify-around items-center">
 
-                        <h1 className="text-[17px] font-bold">{info.price} TND</h1>
+                        <h1 className="text-[17px] font-bold">{new Intl.NumberFormat().format(info.price)} TND</h1>
 
                         <button className={buttonStyles} onClick={HandleClick}>
                             <Cart size="1.3rem" className="no-event" />

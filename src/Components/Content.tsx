@@ -52,7 +52,7 @@ export default function Content() {
             }
             setLoading(false)
 
-        }, 1500)
+        }, 1000)
     }
 
     const HandleDisplay = () => {
