@@ -6,10 +6,11 @@ import useLoader from "../CustomHooks/useLoader"
 import { Count } from "../Contexts/ItemsContext"
 import { AllProducts } from "../data/Data"
 
-// importing icons,loader
+// importing icons,loader,toast notification
 import { FaPlus as Plus } from "react-icons/fa6";
 import { FaMinus as Minus } from "react-icons/fa";
 import BeatLoader from "react-spinners/BeatLoader"
+import { ToastContainer, toast } from "react-toastify"
 
 import { useParams, useNavigate } from "react-router-dom"
 import { useState, useContext, useEffect, useRef } from "react"
@@ -42,6 +43,10 @@ export default function Product() {
       // to prevent problems
       if (load.current < 1 && count == 0) {
         provider?.HandleAdd(product)
+        toast.success("Product added to your cart", {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          className: "w-[320px] text-[17px]",
+        });
       }
 
       load.current++
@@ -66,12 +71,11 @@ export default function Product() {
     }
 
     return (
-
       <div className="container flex items-center justify-around h-[85vh] ml-40">
-
-        <div>
-          {url ? <img className="w-[540px]" src={url} alt="Image of the product" /> : <BeatLoader />}
+        <div className="w-[540px] flex justify-center items-center">
+          {url ? <img className="full" src={url} alt="Image of the product" /> : <BeatLoader />}
         </div>
+        <ToastContainer />
 
         <div className="flex flex-col items-center">
 
@@ -96,7 +100,6 @@ export default function Product() {
         </div>
 
       </div>
-
     )
   }
 

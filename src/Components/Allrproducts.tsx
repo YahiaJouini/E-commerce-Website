@@ -1,8 +1,9 @@
-// importing Icons/loaders
+// importing icons,loader,toast notification
 import { BsCart3 as Cart } from "react-icons/bs";
 import { FaPlus as Plus } from "react-icons/fa6";
 import { FaMinus as Minus } from "react-icons/fa";
 import BeatLoader from "react-spinners/BeatLoader"
+import { toast } from 'react-toastify';
 
 //importing Types
 import { itemType } from "../Contexts/ItemsContext";
@@ -14,6 +15,8 @@ import useLoader from "../CustomHooks/useLoader";
 import { Count, ItemsContext } from "../Contexts/ItemsContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+
 
 // setting up the Types
 type ProductDisplayType = {
@@ -39,6 +42,10 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
     const HandleClick = () => {
         provided?.HandleAdd(info)
+        toast.success("Product added to your cart", {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            className: "w-[320px] text-[17px]",
+        });
     }
 
     const HandleNavigate = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -51,6 +58,30 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
     }
     const buttonStyles = "bg-[#f5f5f5] hover:bg-[#e6e6e6] p-[9px] rounded-lg flex justify-center items-center no-event"
+
+    const HandleIcon = (x: number) => {
+        if (x > 0) {
+            if (Count(provided?.items, info) < 1) {
+                toast.success("Product added to your cart", {
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    className: "w-[320px] text-[17px]",
+                });
+            }
+            provided?.HandleAdd(info)
+        }
+        else {
+            if (Count(provided?.items, info) === 1) {
+                toast.info("Product removed from your cart", {
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    className: "w-[320px] text-[17px]",
+                });
+            }
+
+            provided?.HandleRemove(info)
+
+        }
+
+    }
 
     return (
         <div onClick={(e) =>
@@ -86,7 +117,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
                         <h1 className="text-[17px] font-bold">{info.price} TND</h1>
                         <div className="w-full flex justify-center gap-8 items-center mt-2">
 
-                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => provided?.HandleAdd(info)}>
+                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => HandleIcon(1)}>
 
                                 <Plus size="1.1rem" />
 
@@ -94,7 +125,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
                             <h1 className="text-[25px]">{Count(provided?.items, info)}</h1>
 
-                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => provided?.HandleRemove(info)}>
+                            <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => HandleIcon(-1)}>
 
                                 <Minus size="0.9rem" value="dd" />
 

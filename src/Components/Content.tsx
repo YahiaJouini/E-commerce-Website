@@ -2,11 +2,14 @@
 import DisplayNav from "./DisplayNav"
 import Allrproducts from "./Allrproducts"
 
-//imporing loaders
+//imporing loaders,toast notification
 import BarLoader from "react-spinners/BarLoader"
+import { ToastContainer } from "react-toastify"
 
 import { AllProducts, AllProductsType } from "../data/Data"
 import { useState, useEffect, useRef } from "react"
+
+
 
 
 
@@ -87,6 +90,9 @@ export default function Content() {
                     <div ref={ref} className="w-full flex gap-12 justify-between flex-wrap">
                         {content?.slice(0, display)?.map((el, idx) => <Allrproducts key={idx} info={el} />)}
                     </div>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={3000} />
 
                     <button disabled={!LessOrEqual}
                         onClick={HandleDisplay}
