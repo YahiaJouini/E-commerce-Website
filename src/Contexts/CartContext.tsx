@@ -2,6 +2,7 @@
 import { createContext, useEffect } from "react";
 import { useState, useContext } from "react";
 import { ItemsContext } from "./ItemsContext";
+import { AllProducts } from "../data/Data";
 import { Count } from "./ItemsContext";
 
 export type itemType = {
@@ -53,8 +54,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const HandleAdd = (id: number) => {
 
         setCart(prev => prev.map(pr => (
-            pr.id === id ? { ...pr, orders: pr.orders + 1 } : pr
+            pr.id === id ? (
+                { ...pr, orders: pr.orders + 1 }) : pr
         )))
+        provider?.HandleAdd(AllProducts.find(pr => pr.id === id))
 
     }
     const HandleRemove = (id: number) => {
@@ -62,7 +65,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         setCart(prev => prev.map(pr => (
             pr.id === id ? { ...pr, orders: pr.orders - 1 } : pr
         )))
-
+        provider?.HandleRemove(AllProducts.find(pr => pr.id === id))
     }
 
     const RemoveProduct = (id: number) => {
