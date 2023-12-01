@@ -1,6 +1,6 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import { ItemsContext } from "../Contexts/ItemsContext";
 import { useContext } from "react";
+import { CartContext } from "../Contexts/CartContext";
 
 // importing icons
 import { MdFavoriteBorder as Fav } from "react-icons/md";
@@ -9,7 +9,14 @@ import { FaShoppingBag as Bag } from "react-icons/fa";
 export default function Header() {
 
 
-  const provided = useContext(ItemsContext)
+  const provided = useContext(CartContext)
+
+  // getting the number of orders
+  let items = 0
+  provided?.cart?.forEach(prov => {
+    items += prov.orders
+  })
+
   const navigate = useNavigate()
 
   return (
@@ -39,7 +46,7 @@ export default function Header() {
             <button><Fav size="1.2rem" /></button>
             <button className="flex gap-1" onClick={() => navigate("/cart")}>
               <Bag size="1.2rem" />
-              <span className="w-4 font-medium">{provided?.items.length}</span>
+              <span className="w-4 font-medium">{items}</span>
             </button>
           </div>
 

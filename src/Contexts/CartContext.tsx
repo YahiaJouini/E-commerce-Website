@@ -24,6 +24,8 @@ export type CartType = {
 
 type CartContextType = {
     cart: CartType[] | null
+    HandleAdd: (id: number) => void
+    HandleRemove: (id: number) => void
 }
 
 
@@ -47,16 +49,31 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const provider = useContext(ItemsContext)
     const [cart, setCart] = useState<CartType[]>([])
 
+    const HandleAdd = (id: number) => {
+
+        setCart(prev => prev.map(pr => (
+            pr.id === id ? { ...pr, orders: pr.orders + 1 } : pr
+        )))
+
+    }
+    const HandleRemove = (id: number) => {
+        
+        setCart(prev => prev.map(pr => (
+            pr.id === id ? { ...pr, orders: pr.orders - 1 } : pr
+        )))
+
+    }
+
     useEffect(() => {
-        const tempCart = uniqueItems(provider?.items).map(idk => {
-            return { ...idk, orders: Count(provider?.items, idk) }
+        const tempCart = uniqueItems(provider?.items).map(item => {
+            return { ...item, orders: Count(provider?.items, item.id) }
         })
         setCart(tempCart)
 
     }, [provider])
 
     return (
-        <CartContext.Provider value={{ cart }}>
+        <CartContext.Provider value={{ cart, HandleAdd, HandleRemove }}>
             {children}
         </CartContext.Provider>
     )

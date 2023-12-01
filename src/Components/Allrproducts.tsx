@@ -61,7 +61,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
     const HandleIcon = (x: number) => {
         if (x > 0) {
-            if (Count(provided?.items, info) < 1) {
+            if (Count(provided?.items, info.id) < 1) {
                 toast.success("Product added to your cart", {
                     position: toast.POSITION.BOTTOM_RIGHT,
                     className: "w-[320px] text-[17px]",
@@ -70,7 +70,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
             provided?.HandleAdd(info)
         }
         else {
-            if (Count(provided?.items, info) === 1) {
+            if (Count(provided?.items, info.id) === 1) {
                 toast.info("Product removed from your cart", {
                     position: toast.POSITION.BOTTOM_RIGHT,
                     className: "w-[320px] text-[17px]",
@@ -103,7 +103,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
             <div>
                 <h1 className="text-lg text-center break-keep mb-4">{info.name}</h1>
 
-                {!Count(provided?.items, info) ?
+                {!Count(provided?.items, info.id) ?
                     <div className="w-[260px] flex justify-around items-center">
 
                         <h1 className="text-[17px] font-bold">{new Intl.NumberFormat().format(info.price)} TND</h1>
@@ -123,7 +123,7 @@ export default function ProductDisplay({ info }: ProductDisplayType) {
 
                             </button>
 
-                            <h1 className="text-[25px]">{Count(provided?.items, info)}</h1>
+                            <h1 className="text-[25px]">{Count(provided?.items, info.id)}</h1>
 
                             <button className={`${buttonStyles} p-0 w-8 h-8`} onClick={() => HandleIcon(-1)}>
 

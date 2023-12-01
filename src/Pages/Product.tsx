@@ -32,7 +32,7 @@ export default function Product() {
     const url = useLoader(product.image)
     const navigate = useNavigate()
     const provider = useContext(ItemsContext)
-    const count = Count(provider?.items, product)
+    const count = Count(provider?.items, Number(id))
     const [qty, setQty] = useState(count > 1 ? count : 1)
     const load = useRef(0) // to only add the item once when the page is refreched or product is clicked
 

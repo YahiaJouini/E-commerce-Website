@@ -20,11 +20,11 @@ type ItemsContextType = {
 export const ItemsContext = createContext<ItemsContextType | null>(null)
 
 // to count items and check for existance (return value > 0)
-export function Count(array: itemType[] | [] | undefined, element: itemType) {
+export function Count(array: itemType[] | [] | undefined, id: number) {
     let result = 0
     if (array) {
         for (let arr of array) {
-            if (arr.id === element.id) {
+            if (arr.id === id) {
                 result += 1
             }
         }

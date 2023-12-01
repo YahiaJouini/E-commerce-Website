@@ -1,15 +1,26 @@
 import CartTable from '../Components/CartTable'
 import { useContext } from 'react'
 import { CartContext } from '../Contexts/CartContext'
+import Quantity from '../Components/Quantity'
 export default function ShoppingCart() {
+    
 
+    const Cartprovided = useContext(CartContext)
 
-    const provided = useContext(CartContext)
-    if (provided?.cart?.length) {
+    function HandleClick(x:number,id?:number,orders?: number) {
+        if(x>0) {
+            id && Cartprovided?.HandleAdd(id)
+        }else {
+            if(orders && orders>1) {
+                id && Cartprovided?.HandleRemove(id)
+            }
+        }
+    }
+    if (Cartprovided?.cart?.length) {
         return (
             <div className="container">
                 <CartTable>
-                    {provided.cart.map((product,idx) => (
+                    {Cartprovided.cart.map((product,idx) => (
                         <tr key={idx}>
                             <td>
                                 <div className='flex items-center p-4'>
@@ -19,6 +30,9 @@ export default function ShoppingCart() {
                                     <p>Product Id : {product.id}</p>
                                     </div>
                                 </div>
+                            </td>
+                            <td>
+                                <Quantity qty={product.orders} id={product.id} HandleClick={HandleClick} />
                             </td>
                         </tr>
                     ))}
