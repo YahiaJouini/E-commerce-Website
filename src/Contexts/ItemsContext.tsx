@@ -15,6 +15,7 @@ type ItemsContextType = {
     items: itemType[] | []
     HandleAdd: (item: itemType | undefined) => void
     HandleRemove: (item: itemType | undefined) => void
+    RemoveProduct: (id: number) => void
 }
 
 export const ItemsContext = createContext<ItemsContextType | null>(null)
@@ -39,7 +40,6 @@ export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
     // adding a new item to the cart
     const HandleAdd = (item: itemType | undefined) => {
         (item && setItems(prev => [...prev, item]))
-
     }
 
     // removing an item from the cart!
@@ -51,8 +51,14 @@ export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }
 
+    //! fix the product quantity not updating on the home page!
+
+    const RemoveProduct = (id: number) => {
+        setItems(prev => prev.filter(pr => pr.id !== id))
+    }
+
     return (
-        <ItemsContext.Provider value={{ items, HandleAdd, HandleRemove }}>
+        <ItemsContext.Provider value={{ items, HandleAdd, HandleRemove, RemoveProduct }}>
             {children}
         </ItemsContext.Provider>
     )

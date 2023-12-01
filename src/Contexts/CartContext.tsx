@@ -26,6 +26,7 @@ type CartContextType = {
     cart: CartType[] | null
     HandleAdd: (id: number) => void
     HandleRemove: (id: number) => void
+    RemoveProduct: (id: number) => void
 }
 
 
@@ -57,11 +58,17 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
     }
     const HandleRemove = (id: number) => {
-        
+
         setCart(prev => prev.map(pr => (
             pr.id === id ? { ...pr, orders: pr.orders - 1 } : pr
         )))
 
+    }
+
+    const RemoveProduct = (id: number) => {
+
+        setCart(prev => prev.filter(pr => pr.id !== id))
+        provider?.RemoveProduct(id)
     }
 
     useEffect(() => {
@@ -73,7 +80,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }, [provider])
 
     return (
-        <CartContext.Provider value={{ cart, HandleAdd, HandleRemove }}>
+        <CartContext.Provider value={{ cart, HandleAdd, HandleRemove, RemoveProduct }}>
             {children}
         </CartContext.Provider>
     )

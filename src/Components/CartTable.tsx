@@ -1,12 +1,12 @@
 export default function CartTable({ children }: { children: React.ReactNode }) {
   return (
-    <table>
-      <thead>
+    <table className="w-full ">
+      <thead className="">
         <tr>
-          <td>Product</td>
-          <td>Quantity</td>
-          <td>Total Price</td>
-          <td></td>
+          <th className="">Product</th>
+          <th className="">Quantity</th>
+          <th className="">Total Price</th>
+          <th className=""></th>
         </tr>
       </thead>
       <tbody>
