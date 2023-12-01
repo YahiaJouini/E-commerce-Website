@@ -2,6 +2,8 @@
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
+import Chekout from "./Pages/Chekout";
+import ShoppingCart from "./Pages/ShoppingCart";
 
 import { Routes, Route } from "react-router-dom";
 import { ItemsProvider } from "./Contexts/ItemsContext";
@@ -9,8 +11,6 @@ import { CartProvider } from "./Contexts/CartContext";
 
 // toast notification css
 import 'react-toastify/dist/ReactToastify.css';
-import Chekout from "./Pages/Chekout";
-import ShoppingCart from "./Pages/ShoppingCart";
 
 function App() {
 
@@ -18,9 +18,8 @@ function App() {
 
     <ItemsProvider>
       <CartProvider>
-      <Header />
 
-
+        <Header />
         <Routes>
 
           <Route path="/" element={<Home />} />

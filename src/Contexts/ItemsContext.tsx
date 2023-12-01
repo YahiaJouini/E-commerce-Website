@@ -45,8 +45,9 @@ export const ItemsProvider = ({ children }: { children: React.ReactNode }) => {
     // removing an item from the cart!
     const HandleRemove = (item: itemType | undefined) => {
         if (item) {
-            const firstHalf = items.slice(0, items.indexOf(item))
-            const secondHalf = items.slice(items.indexOf(item) + 1)
+            //used lastIndexOf because IndexOf cause the items to re-arrange when the item is at index 0
+            const firstHalf = items.slice(0, items.lastIndexOf(item)) 
+            const secondHalf = items.slice(items.lastIndexOf(item) + 1)
             setItems([...firstHalf, ...secondHalf])
         }
     }

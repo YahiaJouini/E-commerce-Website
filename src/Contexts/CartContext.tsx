@@ -1,6 +1,4 @@
-// i want to provide to all children an items list and a setItems to display in the cart of the header
-import { createContext, useEffect } from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, createContext, useEffect } from "react";
 import { ItemsContext } from "./ItemsContext";
 import { AllProducts } from "../data/Data";
 import { Count } from "./ItemsContext";

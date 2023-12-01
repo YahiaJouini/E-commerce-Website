@@ -6,15 +6,15 @@ export default function LoginForm() {
             <h1 className="text-[20px] font-bold mb-6">Account details</h1>
             <form className="flex flex-col">
                 <label htmlFor="email" className="text-[#718096] text-[17px] mb-2">Email adress</label>
-                <input id="email" type="email" className="bg-[#E2E8F0] px-5 py-[10px] rounded-lg mb-6 outline-none text-[17px]" />
+                <input id="email" type="email" className="px-5 py-[10px] rounded-lg mb-6 outline-none text-[17px] search-shadow" />
 
                 <label htmlFor="pwd" className="text-[#718096] text-[17px] mb-2">Password</label>
-                <input id="email" type="password" className="bg-[#E2E8F0] px-5 py-[10px] rounded-lg outline-none" />
+                <input id="email" type="password" className=" px-5 py-[10px] rounded-lg outline-none search-shadow" />
                 <div className="flex justify-end gap-5 items-center">
                     <button
                         onClick={() => { navigate("/register") }}
-                        className="">
-                        Register for account
+                        className="font-semibold flex items-center">
+                        REGISTER FOR ACCOUNT
                     </button>
                     <button className="btn my-10 w-[120px] h-[40px]">Login</button>
                 </div>
