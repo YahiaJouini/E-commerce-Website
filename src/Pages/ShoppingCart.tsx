@@ -1,7 +1,7 @@
 // importing Components
 import CartTable from '../Components/CartTable'
 import OrderSummary from '../Components/OrderSummary';
-import ContinueShopping from '../Components/ContinueShopping';
+import ErrorMessage from '../Components/ErrorMessage';
 import Quantity from '../Components/Quantity'
 
 // importing toast Notification and icons
@@ -15,6 +15,9 @@ import { CartContext } from '../Contexts/CartContext'
 
 
 export default function ShoppingCart() {
+
+    // to fix the position inheritance when using useNavigate
+    window.scrollTo(0, 0)
 
     const Cartprovided = useContext(CartContext)
     const navigate = useNavigate()
@@ -94,18 +97,15 @@ export default function ShoppingCart() {
 
     } else {
         return (
-            <div className='h-[85vh] grid place-content-center '>
-                <div className='w-[40%] m-auto bg-gradient-to-r from-[#e5e7eb] to-[#edeef1] p-12 
-                                flex flex-col justify-center items-center rounded-lg search-shadow'>
-                    <h1 className='text-[26px] font-bold text-center mb-10'>
-                        OOPS! YOUR CART IS EMPTY.
-                        EXPLORE OUR PRODUCTS AND ADD THEM TO YOUR CART.
-                        IF YOU NEED HELP, FEEL FREE TO CONTACT US. <br /> HAPPY SHOPPING!
-                    </h1>
-                    <ContinueShopping HandleNavigate={() => navigate('/')} />
+            <ErrorMessage>
+                <h1 className='text-[26px] font-bold text-center mb-10'>
+                    OOPS! YOUR CART IS EMPTY.
+                    EXPLORE OUR PRODUCTS AND ADD THEM TO YOUR CART.
+                    IF YOU NEED HELP, FEEL FREE TO CONTACT US. <br /> HAPPY SHOPPING!
+                </h1>
 
-                </div>
-            </div>
+            </ErrorMessage>
+
         )
     }
 }
