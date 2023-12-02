@@ -26,6 +26,7 @@ type CartContextType = {
     HandleAdd: (id: number) => void
     HandleRemove: (id: number) => void
     RemoveProduct: (id: number) => void
+    CalculCost: (array: CartType[]) => number
 }
 
 
@@ -40,6 +41,14 @@ function uniqueItems(array: itemType[] | undefined) {
         return temp
     }
     return []
+}
+
+export const CalculCost = (array: CartType[]) => {
+    let total = 0;
+    for (let arr of array) {
+        total += arr.orders * arr.price
+    }
+    return total
 }
 
 export const CartContext = createContext<CartContextType | null>(null)
@@ -81,7 +90,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }, [provider])
 
     return (
-        <CartContext.Provider value={{ cart, HandleAdd, HandleRemove, RemoveProduct }}>
+        <CartContext.Provider value={{ cart, HandleAdd, HandleRemove, RemoveProduct, CalculCost }}>
             {children}
         </CartContext.Provider>
     )

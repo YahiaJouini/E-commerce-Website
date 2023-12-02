@@ -3,6 +3,7 @@ import { CartContext } from "../Contexts/CartContext"
 import LoginForm from "../Components/LoginForm"
 import Shipping from "../Components/Shipping"
 import ErrorMessage from "../Components/ErrorMessage"
+import OrderSummary from "../Components/OrderSummary"
 
 export default function Chekout() {
 
@@ -14,17 +15,17 @@ export default function Chekout() {
 
     if (provider?.cart?.length) {
         return (
-            <div className="container flex justify-around mt-10">
-                <div className="w-[45%] rounded-xl">
+            <div className="container flex justify-around items-center mt-10">
+                <div className="w-[45%] rounded-xl  search-shadow">
                     <div className="bg-gradient-to-r from-[#e5e7eb] to-[#edeef1] rounded-lg p-6">
                         <LoginForm />
-                        <div className="my-8 h-[1px] w-[90%] m-auto bg-[#E2E8F0]"></div>
+                        <div className="mb-6 h-[2px] w-[70%] m-auto bg-gray-300"></div>
                         <Shipping />
-                    </div>
+                    </div>  
 
                 </div>
-                <div className="">
-                    items are placed here
+                <div>
+                    <OrderSummary items={provider.cart.length} cost={provider.CalculCost(provider.cart)} chekout={false} />
                 </div>
             </div>
         )

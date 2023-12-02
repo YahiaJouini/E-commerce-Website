@@ -89,7 +89,7 @@ export default function ShoppingCart() {
                         autoClose={3000} />
                 </div>
                 <div className='w-[30%]'>
-                    <OrderSummary items={Cartprovided.cart.length} cost={total} />
+                    <OrderSummary items={Cartprovided.cart.length} cost={total} chekout={true} />
                 </div>
 
             </div>

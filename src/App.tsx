@@ -2,7 +2,7 @@
 import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
-import Chekout from "./Pages/Chekout";
+import Checkout from "./Pages/Checkout";
 import ShoppingCart from "./Pages/ShoppingCart";
 import Footer from "./Components/Footer";
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/cart" element={<ShoppingCart />} />
-          <Route path='/chekout' element={<Chekout />} />
+          <Route path='/checkout' element={<Checkout />} />
 
         </Routes>
         <Footer />

@@ -1,6 +1,12 @@
 import ContinueShopping from "./ContinueShopping";
 import { useNavigate } from "react-router-dom";
-export default function OrderSummary({ items, cost }: { items: number, cost: number }) {
+
+type OrderSummaryType = {
+    items: number,
+    cost: number
+    chekout: boolean
+}
+export default function OrderSummary({ items, cost, chekout }: OrderSummaryType) {
     const navigate = useNavigate()
     return (
         <div className='w-full py-10 bg-gradient-to-r from-[#e5e7eb] to-[#edeef1] rounded-lg mt-4 search-shadow '>
@@ -19,10 +25,21 @@ export default function OrderSummary({ items, cost }: { items: number, cost: num
                     <h1 className='text-[20px] font-semibold'>TOTAL COST</h1>
                     <h1 className='text-[20px] font-semibold'>{new Intl.NumberFormat().format(cost)} TND </h1>
                 </div>
-                <div className="flex items-center justify-between">
-                    <ContinueShopping HandleNavigate={() => navigate('/')} />
-                    <button className="btn w-[140px] my-2" onClick={() => navigate("/chekout")}>CHECKOUT</button>
-                </div>
+                {chekout ? (
+                    <div className="flex items-center justify-between">
+                        <ContinueShopping HandleNavigate={() => navigate('/')} />
+                        <button className="btn w-[140px] my-2" onClick={() => navigate("/checkout")}>CHECKOUT</button>
+                    </div>
+                ) :
+                    (
+                        <div className="flex items-center justify-between">
+                            <ContinueShopping HandleNavigate={() => navigate('/')} />
+                            <button className="btn w-[140px] my-2" onClick={() => navigate("/cart")}>VIEW CART</button>
+                        </div>
+                    )
+
+                }
+
             </div>
         </div>
     )

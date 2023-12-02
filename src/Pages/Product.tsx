@@ -103,8 +103,11 @@ export default function Product() {
             <Quantity qty={qty} HandleClick={HandleClick} />
 
           </div>
-          <ProductButton HandleNavigate={() => navigate("/cart")}>VIEW CART</ProductButton>
-          <ProductButton HandleNavigate={() => navigate("/")}>KEEP SHOPPING</ProductButton>
+          <div className="w-[80%]">
+            <ProductButton HandleNavigate={() => navigate("/cart")}>VIEW CART</ProductButton>
+            <ProductButton HandleNavigate={() => navigate("/")}>KEEP SHOPPING</ProductButton>
+          </div>
+
         </div>
 
       </div>
