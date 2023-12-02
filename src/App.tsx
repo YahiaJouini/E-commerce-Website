@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Chekout from "./Pages/Chekout";
 import ShoppingCart from "./Pages/ShoppingCart";
+import Footer from "./Components/Footer";
 
 import { Routes, Route } from "react-router-dom";
 import { ItemsProvider } from "./Contexts/ItemsContext";
@@ -29,6 +30,7 @@ function App() {
           <Route path='/chekout' element={<Chekout />} />
 
         </Routes>
+        <Footer />
 
       </CartProvider>
     </ItemsProvider>

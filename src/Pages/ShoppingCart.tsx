@@ -17,6 +17,7 @@ import { CartContext } from '../Contexts/CartContext'
 export default function ShoppingCart() {
 
     const Cartprovided = useContext(CartContext)
+    const navigate = useNavigate()
 
     if (Cartprovided?.cart?.length) {
 
@@ -24,9 +25,12 @@ export default function ShoppingCart() {
             if (x > 0) {
                 id && Cartprovided?.HandleAdd(id)
             } else {
-                if (orders && orders > 1) {
-                    id && Cartprovided?.HandleRemove(id)
-
+                if (orders) {
+                    if (orders === 1 && Cartprovided?.cart?.length === 1) {
+                        navigate('/')
+                    } else {
+                        id && Cartprovided?.HandleRemove(id)
+                    }
                 }
             }
         }
@@ -42,7 +46,7 @@ export default function ShoppingCart() {
 
         let total = 0;
         return (
-            <div className="container flex justify-between items-center mt-8">
+            <div className="container flex justify-between items-center my-8">
                 <div className="flex items-center sm:justify-center ml-4 sm:ml-0 w-[60%]">
                     <CartTable >
                         {Cartprovided.cart.map(cartItem => {
@@ -89,7 +93,6 @@ export default function ShoppingCart() {
         )
 
     } else {
-        const navigate = useNavigate()
         return (
             <div className='h-[85vh] grid place-content-center '>
                 <div className='w-[40%] m-auto bg-gradient-to-r from-[#e5e7eb] to-[#edeef1] p-12 

@@ -1,10 +1,11 @@
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
 
 // importing icons
 import { MdFavoriteBorder as Fav } from "react-icons/md";
 import { FaShoppingBag as Bag } from "react-icons/fa";
+import Logo from "./Logo";
 
 export default function Header() {
 
@@ -23,9 +24,7 @@ export default function Header() {
 
     <header className="bg-main flex items-center h-[70px] sticky top-0  z-[999]">
       <div className="container flex justify-between items-center ">
-
-        <Link to="/"><h1 className="title font-semibold cursor-pointer">VarietyFinds</h1></Link>
-
+        <Logo />
         <nav className="w-full flex justify-center gap-[50px] items-center">
 
           <NavLink to="/">HOME</NavLink>
