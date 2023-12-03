@@ -1,4 +1,4 @@
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
 
@@ -13,10 +13,7 @@ export default function Header() {
   const provided = useContext(CartContext)
 
   // getting the number of orders
-  let items = 0
-  provided?.cart?.forEach(prov => {
-    items += prov.orders
-  })
+  let items = provided?.cart ? provided.cart.length : 0 
 
   const navigate = useNavigate()
 

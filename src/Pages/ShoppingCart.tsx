@@ -89,7 +89,7 @@ export default function ShoppingCart() {
                         autoClose={3000} />
                 </div>
                 <div className='w-[30%]'>
-                    <OrderSummary items={Cartprovided.cart.length} cost={total} chekout={true} />
+                    <OrderSummary items={Cartprovided.cart.length} cost={total} checkout={true} />
                 </div>
 
             </div>
@@ -99,7 +99,7 @@ export default function ShoppingCart() {
         return (
             <ErrorMessage>
                 <h1 className='text-[26px] font-bold text-center mb-10'>
-                    OOPS! YOUR CART IS EMPTY.
+                    YOUR CART IS EMPTY!
                     EXPLORE OUR PRODUCTS AND ADD THEM TO YOUR CART.
                     IF YOU NEED HELP, FEEL FREE TO CONTACT US. <br /> HAPPY SHOPPING!
                 </h1>

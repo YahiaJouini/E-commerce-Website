@@ -18,14 +18,14 @@ export default function Chekout() {
             <div className="container flex justify-around items-center mt-10">
                 <div className="w-[45%] rounded-xl  search-shadow">
                     <div className="bg-gradient-to-r from-[#e5e7eb] to-[#edeef1] rounded-lg p-6">
-                        <LoginForm />
+                        <LoginForm title="Account details"/>
                         <div className="mb-6 h-[2px] w-[70%] m-auto bg-gray-300"></div>
                         <Shipping />
                     </div>  
 
                 </div>
                 <div>
-                    <OrderSummary items={provider.cart.length} cost={provider.CalculCost(provider.cart)} chekout={false} />
+                    <OrderSummary items={provider.cart.length} cost={provider.CalculCost(provider.cart)} checkout={false} />
                 </div>
             </div>
         )
